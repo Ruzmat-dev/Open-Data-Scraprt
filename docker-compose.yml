@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./scraper_api_service
+    container_name: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  bot:
+    build: ./telegram_bot_service
+    container_name: telegram_bot
+    depends_on:
+      - backend
+    volumes:
+      - ./telegram_bot_service:/app

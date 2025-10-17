@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment files
+.env
+
+# IDE and system files
+.idea/
+.vscode/
+*.DS_Store
+
+# Byte-compiled / cache
+*.pyc
+*.pyo
+*.pyd
+
+# Docker
+*.pid
+*.db
