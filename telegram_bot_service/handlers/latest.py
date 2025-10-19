@@ -1,6 +1,8 @@
 import aiohttp
 from aiogram import types
 import html
+
+from config import JOBS_ENDPOINT
 from utils.text_formatters import format_job_text
 
 
@@ -9,7 +11,7 @@ async def cmd_latest(message: types.Message):
 
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get("http://127.0.0.1:8000/jobs/jobs/?limit=5") as resp:
+            async with session.get(f"{JOBS_ENDPOINT}/?limit=5") as resp:
                 # statusni tekshirish foydali (500/404 holatlari uchun)
                 if resp.status != 200:
                     text_body = await resp.text()
