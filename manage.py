@@ -3,7 +3,9 @@
 import os
 import sys
 
-
+from pathlib import Path
+from scraper_api_service.settings import BASE_DIR
+print(BASE_DIR / 'db.sqlite3')
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scraper_api_service.settings')
     try:
