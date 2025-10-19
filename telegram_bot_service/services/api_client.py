@@ -1,9 +1,10 @@
-import requests
-from config import API_URL
+import aiohttp
 
-def get_data(endpoint: str):
-    """Backend API dan ma'lumot olish"""
-    url = f"{API_URL}{endpoint}"
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.json()
+BASE_URL = "http://127.0.0.1:8000/"
+
+async def get_data(endpoint: str):
+    url = f"{BASE_URL}{endpoint}"
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            resp.raise_for_status()
+            return await resp.json()
