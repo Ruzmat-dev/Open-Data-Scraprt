@@ -12,6 +12,8 @@ services:
   bot:
     build: ./telegram_bot_service
     container_name: telegram_bot
+    environment:
+      - JOBS_ENDPOINT=http://backend:8000/api/jobs
     depends_on:
       - backend
     volumes:

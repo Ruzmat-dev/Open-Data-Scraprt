@@ -10,7 +10,7 @@ from handlers.search import ask_for_search, handle_search, handle_pagination
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token='8362846732:AAGwLgZ3Y57l5dj7wQ9oL3-yATWh_eN0gek')
 dp = Dispatcher()
 
 def register_handlers():
